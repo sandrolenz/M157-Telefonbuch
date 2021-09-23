@@ -1,0 +1,54 @@
+* {
+    background-color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+}
+
+#img_firmenlogo {
+    padding: 0;
+    margin: 0;
+    width: 400px;
+}
+
+#btn_search {
+    align-self: center;
+    border: none;
+    width: 100px;
+    height: 100px;
+}
+
+#img_search {
+    width: 80px;
+}
+
+.div_result {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.div_result p {
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
+    padding: 5px;
+    width: 50%;
+}
+
+#txt_name {
+    align-self: center;
+}
+
+#img_person {
+    width: 300px !important;
+}
+
+#separator {
+    color: slategrey;
+}
