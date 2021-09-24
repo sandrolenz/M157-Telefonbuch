@@ -14,19 +14,29 @@
 </head>
 
 <body>
-    <div class="header">
-        <img src="./img/logo.png" alt="Firmenlogo" id="img_firmenlogo">
-        <button id="btn_search" onclick="triggerSearch()"><img src="./img/search.png" alt="Suchen" id="img_search"></button>
-    </div>
-    <br><br><br>
-    <div class="div_result">
-        <h1 id="txt_name">Peter Miller</h1>
-        <img id="img_person" src="https://thispersondoesnotexist.com/image">
-        <br><a id="separator">–––––––––/–––––––––</a>
-        <p id="txt_email">E-Mail</p>
-        <p id="txt_phone">Phone</p>
-        <p id="txt_postiton">Position</p>
-        <p id="txt_dept">Departement</p>
+    <div id="page">
+        <div id="content-wrap">
+            <div class="header">
+                <a href="./index.php"><img src="./img/logo.png" alt="Firmenlogo" id="img_firmenlogo"></a>
+                <button id="btn_search" onclick="triggerSearch()"><img src="./img/search.png" alt="Suchen" id="img_search"></button>
+            </div>
+            <br><br><br>
+            <div class="div_result">
+                <h1 id="txt_name">Vorname Nachname</h1><br>
+                <img id="img_person" src="https://thispersondoesnotexist.com/image">
+                <br><a id="separator">–––––––––/–––––––––</a>
+                <p id="txt_email">E-Mail</p>
+                <p id="txt_phone">Telefonnummer</p>
+                <p id="txt_postiton">Position</p>
+                <p id="txt_dept">Abteilung</p>
+            </div>
+        </div>
+        <footer>
+            <div id="div_footer">
+                <p>M157 - MitarbeiterTelefonbuch</p>
+                <p><a class="footer_link" href="https://github.com/sandrolenz/M157-Telefonbuch" target="_blank">GitHub</a> | <a class="footer_link" href="./impressum.html">Impressum</a></p>
+            </div>
+        </footer>
     </div>
 </body>
 
