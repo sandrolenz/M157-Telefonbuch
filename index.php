@@ -40,11 +40,6 @@
     </div>
 </body>
 
-<script>
-    function triggerSearch() {
-        var searchTerm = prompt("Suche")
-        alert(searchTerm) // For debugging
-    }
-</script>
+<script src="./script.js"></script>
 
 </html>
