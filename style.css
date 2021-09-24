@@ -1,12 +1,14 @@
 * {
     background-color: whitesmoke;
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
     display: flex;
     flex-direction: row;
-   justify-content: space-between;
+    justify-content: space-between;
 }
 
 #img_firmenlogo {
@@ -26,10 +28,11 @@
     width: 80px;
 }
 
-.div_result {
+.div_result{
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin: 8px !important;
 }
 
 .div_result p {
@@ -38,17 +41,67 @@
     border-width: 1px;
     background-color: white;
     padding: 5px;
+    margin: 15px;
     width: 50%;
 }
 
-#txt_name {
+#txt_name, .title {
     align-self: center;
 }
 
 #img_person {
-    width: 300px;
+    width: 300px !important;
 }
 
 #separator {
     color: slategrey;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+#div_footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    color: whitesmoke;
+    background-color: slategrey;
+    height: 50px;
+    width: 100%;
+}
+
+#div_footer p {
+    background-color: slategrey;
+    margin: 15px;
+}
+
+.footer_link {
+    color: whitesmoke;
+    background-color: slategrey;
+    text-decoration: none;
+    
+}
+
+.footer_link:hover {
+    color: darkslategray;
+}
+
+#page {
+    position: relative;
+    min-height: 100vh;
+}
+  
+#content-wrap {
+    padding-bottom: 2.5rem;
+}
+
+.impressum {
+    margin: 10px;
 }
