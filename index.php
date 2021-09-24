@@ -23,7 +23,7 @@
             <br><br><br>
             <div class="div_result">
                 <h1 id="txt_name">Vorname Nachname</h1><br>
-                <img id="img_person" src="https://thispersondoesnotexist.com/image">
+                <img id="img_person" src="./img/avatar_placeholder.jpg"> <!-- https://thispersondoesnotexist.com/image -->
                 <br><a id="separator">–––––––––/–––––––––</a>
                 <p id="txt_email">E-Mail</p>
                 <p id="txt_phone">Telefonnummer</p>
