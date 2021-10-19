@@ -18,7 +18,7 @@
         <div id="content-wrap">
             <div class="header">
                 <a href="./index.php"><img src="./img/logo.png" alt="Firmenlogo" id="img_firmenlogo"></a>
-                <button id="btn_search" onclick="getSearchTerm()"><img src="./img/search.png" alt="Suchen" id="img_search"></button>
+                <button id="btn_search"><img src="./img/search.png" alt="Suchen" id="img_search"></button>
             </div>
             <br><br><br>
             <div class="div_result">
@@ -31,11 +31,12 @@
                 <p id="txt_dept">Abteilung</p>
             </div>
         </div>
+        <div id="result_raw">
+            ...
+        </div>
         <footer>
             <div id="div_footer">
                 <p>M157 - MitarbeiterTelefonbuch</p>
-                <?php $searchTermHTML = '<p id="searchTerm" style="display: none;">...</p>';
-                echo $searchTermHTML; ?>
                 <p><a class="footer_link" href="https://github.com/sandrolenz/M157-Telefonbuch" target="_blank">GitHub</a> | <a class="footer_link" href="./impressum.html">Impressum</a></p>
             </div>
         </footer>
@@ -43,25 +44,23 @@
 </body>
 
 <script type="text/javascript">
-    function getSearchTerm() {
+    let btn = document.getElementById("btn_search")
+    btn.addEventListener("click", function() {
+        // get input
         var search = prompt("Suche")
-        document.getElementById("searchTerm").innerHTML = search;
-        var searchValue = searchTerm.innerHTML;
-        alert(searchValue) // For debugging
+        console.log("SearchTerm: " + search)
 
-        <?php
-        $domdoc = new DomDocument;
-        $domdoc->validateOnParse = true;
-        $domdoc->loadHTML($searchTermHTML);
-
-        $searchTerm = $domdoc->getElementById('searchTerm')->nodeValue; 
-        ?>
-
-        doSearch()
-    };
-
-    <?php require("./doSearch.php"); ?>
-
+        // call search function
+        fetch("./doSearch.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTP-8",
+            },
+            body: `search=${search}`
+        })
+        .then((response) => response.text())
+        .then((res) => (document.getElementById("result_raw").innerHTML = res));
+    })
 </script>
 
 </html>
