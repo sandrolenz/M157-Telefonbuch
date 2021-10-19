@@ -44,9 +44,10 @@
 
 <script type="text/javascript">
     function getSearchTerm() {
-        var searchTerm = prompt("Suche")
-        document.getElementById("searchTerm").innerHTML = searchTerm;
-        alert(searchTerm) // For debugging
+        var search = prompt("Suche")
+        document.getElementById("searchTerm").innerHTML = search;
+        var searchValue = searchTerm.innerHTML;
+        alert(searchValue) // For debugging
 
         <?php
         $domdoc = new DomDocument;
