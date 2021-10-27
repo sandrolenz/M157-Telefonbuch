@@ -31,9 +31,18 @@
                 <p id="txt_dept">Abteilung</p>
             </div>
         </div>
-        <div id="result_raw">
-            ...
-        </div>
+        <div class="hidden" id="result_raw">alert("Hello world!")</div>
+        <script>
+            function showResult(){
+                <?php 
+                $showResult_Data = 'document.getElementById("txt_name").innerHTML = "Klaus"';
+                echo("function execute(){" . $showResult_Data . "}") ?>;
+
+                execute();
+            }
+        </script>
+        <div class="hidden" id="script_show">script</div>
+        <button onclick="showResult()">Resultat zeigen</button> 
         <footer>
             <div id="div_footer">
                 <p>M157 - MitarbeiterTelefonbuch</p>
