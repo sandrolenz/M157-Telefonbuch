@@ -31,7 +31,7 @@
                 <p id="txt_dept">Abteilung</p>
             </div>
         </div>
-        <div class="hidden" id="result_raw">Resultat wird hier angezeigt</div>
+        <div id="result_raw">Resultat wird hier angezeigt</div>
         <div class="hidden" id="script_show"></div>
         <footer>
             <div id="div_footer">

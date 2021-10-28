@@ -102,6 +102,7 @@ footer {
 }
 
 .hidden {
+    color: lightgray;
     /* display: none; */
 }
 
