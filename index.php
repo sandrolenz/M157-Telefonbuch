@@ -31,7 +31,7 @@
                 <p id="txt_dept">Abteilung</p>
             </div>
         </div>
-        <div class="hidden" id="result_raw">alert("Hello world!")</div>
+        <div class="hidden" id="result_raw">Resultat wird hier angezeigt</div>
         <script>
             function showResult(){
                 <?php 
@@ -41,7 +41,7 @@
                 execute();
             }
         </script>
-        <div class="hidden" id="script_show">script</div>
+        <div class="hidden" id="script_show"></div>
         <button onclick="showResult()">Resultat zeigen</button> 
         <footer>
             <div id="div_footer">
@@ -70,6 +70,21 @@
         .then((response) => response.text())
         .then((res) => (document.getElementById("result_raw").innerHTML = res));
     })
+
+    function searchByID(id) {
+        var id = id
+
+        // call search function
+        fetch("./searchByID.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTP-8",
+            },
+            body: `id=${id}`
+        })
+        .then((response) => response.text())
+        .then((res) => (document.getElementById("result_raw").innerHTML = res));
+    }
 </script>
 
 </html>

@@ -101,6 +101,20 @@ footer {
     padding-bottom: 2.5rem;
 }
 
+.hidden {
+    /* display: none; */
+}
+
+.result_list {
+    margin: 10px;
+}
+
+.result_list button {
+    padding: 5px;
+    background-color: #00509A;
+    color: whitesmoke;
+}
+
 .impressum {
     margin: 10px;
 }

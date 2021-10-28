@@ -26,8 +26,9 @@ if ($searchTerm != "") {
                 document.getElementById("txt_dept").innerHTML = "<?php echo "" . $row["departement"]; ?>" <?php }
     } elseif ($result->num_rows > 1) {
         // output data of each row
+        echo '<h3 class="result_list">Mehrere Resultate:</h3>';
         while ($row = $result->fetch_assoc()) {
-            echo "<p>" . $row["id"] . ": " . $row["firstname"] . " " . $row["lastname"] .", " . $row["position"] . ", " . $row["departement"] ."</p>"; }
+            echo '<p class="result_list"><button onclick="searchByID('. $row["id"] .')">' . $row["id"] . "</button> " . $row["firstname"] . " " . $row["lastname"] .", " . $row["position"] . ", " . $row["departement"] ."</p>"; }
         } else {
         echo 'alert("0 results")';
     }
