@@ -19,11 +19,12 @@ if ($searchTerm != "") {
 
     if ($result->num_rows == 1) {
         while ($row = $result->fetch_assoc()) {
-            ?> document.getElementById("txt_name").innerHTML = "<?php echo "" . $row["firstname"] . " " . $row["lastname"]; ?>"
+            ?> <?php echo "<script> function showResult(){" ?> document.getElementById("txt_name").innerHTML = "<?php echo "" . $row["firstname"] . " " . $row["lastname"]; ?>"
                 document.getElementById("txt_email").innerHTML = "<?php echo "" . $row["email"]; ?>"
                 document.getElementById("txt_phone").innerHTML = "<?php echo "" . $row["phone"]; ?>"
                 document.getElementById("txt_position").innerHTML = "<?php echo "" . $row["position"]; ?>"
-                document.getElementById("txt_dept").innerHTML = "<?php echo "" . $row["departement"]; ?>" <?php }
+                document.getElementById("txt_dept").innerHTML = "<?php echo "" . $row["departement"]; ?>" <?php echo '}; </script> <button onclick="showResult()">Resultat zeigen</button>' ?>
+                <?php }
     } else {
         echo 'Something went wrong';
     }

@@ -32,17 +32,7 @@
             </div>
         </div>
         <div class="hidden" id="result_raw">Resultat wird hier angezeigt</div>
-        <script>
-            function showResult(){
-                <?php 
-                $showResult_Data = 'document.getElementById("txt_name").innerHTML = "Klaus"';
-                echo("function execute(){" . $showResult_Data . "}") ?>;
-
-                execute();
-            }
-        </script>
         <div class="hidden" id="script_show"></div>
-        <button onclick="showResult()">Resultat zeigen</button> 
         <footer>
             <div id="div_footer">
                 <p>M157 - MitarbeiterTelefonbuch</p>
@@ -61,14 +51,14 @@
 
         // call search function
         fetch("./doSearch.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTP-8",
-            },
-            body: `search=${search}`
-        })
-        .then((response) => response.text())
-        .then((res) => (document.getElementById("result_raw").innerHTML = res));
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded; charset=UTP-8",
+                },
+                body: `search=${search}`
+            })
+            .then((response) => response.text())
+            .then((res) => (document.getElementById("result_raw").innerHTML = res));
     })
 
     function searchByID(id) {
@@ -76,14 +66,14 @@
 
         // call search function
         fetch("./searchByID.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTP-8",
-            },
-            body: `id=${id}`
-        })
-        .then((response) => response.text())
-        .then((res) => (document.getElementById("result_raw").innerHTML = res));
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded; charset=UTP-8",
+                },
+                body: `id=${id}`
+            })
+            .then((response) => response.text())
+            .then((res) => (document.getElementById("result_raw").innerHTML = res));
     }
 </script>
 
