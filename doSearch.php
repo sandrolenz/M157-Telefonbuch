@@ -19,18 +19,19 @@ if ($searchTerm != "") {
 
     if ($result->num_rows == 1) {
         while ($row = $result->fetch_assoc()) {
-            ?> document.getElementById("txt_name").innerHTML = "<?php echo "" . $row["firstname"] . " " . $row["lastname"]; ?>"
-                document.getElementById("txt_email").innerHTML = "<?php echo "" . $row["email"]; ?>"
-                document.getElementById("txt_phone").innerHTML = "<?php echo "" . $row["phone"]; ?>"
-                document.getElementById("txt_position").innerHTML = "<?php echo "" . $row["position"]; ?>"
-                document.getElementById("txt_dept").innerHTML = "<?php echo "" . $row["departement"]; ?>" <?php }
+                echo "<h1 id='txt_name'>" . $row["firstname"] . " " . $row["lastname"] . "</h1><br>";
+                echo "<br><a id='separator'>–––––––––/–––––––––</a><br>";
+                echo "<p id='txt_email'>" . $row["email"] . "</p>";
+                echo "<p id='txt_phone'>" . $row["phone"]. "</p>";
+                echo "<p id='txt_position'>" . $row["position"] . "</p>";
+                echo "<p id='txt_dept'>" . $row["departement"] . "</p>";}
     } elseif ($result->num_rows > 1) {
         // output data of each row
-        echo '<h3 class="result_list">Mehrere Resultate:</h3>';
+        echo '<h1 class="result_list">Mehrere Resultate:</h1>';
         while ($row = $result->fetch_assoc()) {
             echo '<p class="result_list"><button onclick="searchByID('. $row["id"] .')">' . $row["id"] . "</button> " . $row["firstname"] . " " . $row["lastname"] .", " . $row["position"] . ", " . $row["departement"] ."</p>"; }
         } else {
-        echo 'alert("0 results")';
+            echo "<h1 id='txt_name'>Keine Resultate</h1><br>";
     }
 } else {
     echo 'alert("ERROR: Couldnt get the search term!");';

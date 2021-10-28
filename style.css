@@ -28,14 +28,14 @@
     width: 80px;
 }
 
-.div_result {
+#div_result {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 8px !important;
 }
 
-.div_result p {
+#div_result p {
     border: black;
     border-style: solid;
     border-width: 1px;

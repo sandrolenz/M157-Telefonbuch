@@ -19,12 +19,12 @@ if ($searchTerm != "") {
 
     if ($result->num_rows == 1) {
         while ($row = $result->fetch_assoc()) {
-            ?> <?php echo "<script> function showResult(){" ?> document.getElementById("txt_name").innerHTML = "<?php echo "" . $row["firstname"] . " " . $row["lastname"]; ?>"
-                document.getElementById("txt_email").innerHTML = "<?php echo "" . $row["email"]; ?>"
-                document.getElementById("txt_phone").innerHTML = "<?php echo "" . $row["phone"]; ?>"
-                document.getElementById("txt_position").innerHTML = "<?php echo "" . $row["position"]; ?>"
-                document.getElementById("txt_dept").innerHTML = "<?php echo "" . $row["departement"]; ?>" <?php echo '}; </script> <button onclick="showResult()">Resultat zeigen</button>' ?>
-                <?php }
+            echo "<h1 id='txt_name'>" . $row["firstname"] . " " . $row["lastname"] . "</h1><br>";
+            echo "<br><a id='separator'>–––––––––/–––––––––</a><br>";
+            echo "<p id='txt_email'>" . $row["email"] . "</p>";
+            echo "<p id='txt_phone'>" . $row["phone"]. "</p>";
+            echo "<p id='txt_position'>" . $row["position"] . "</p>";
+            echo "<p id='txt_dept'>" . $row["departement"] . "</p>";}
     } else {
         echo 'Something went wrong';
     }

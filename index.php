@@ -21,7 +21,7 @@
                 <button id="btn_search"><img src="./img/search.png" alt="Suchen" id="img_search"></button>
             </div>
             <br><br><br>
-            <div class="div_result">
+            <div id="div_result">
                 <h1 id="txt_name">Vorname Nachname</h1><br>
                 <!-- <img id="img_person" src="./img/avatar_placeholder.jpg">  https://thispersondoesnotexist.com/image -->
                 <br><a id="separator">–––––––––/–––––––––</a><br>
@@ -31,8 +31,6 @@
                 <p id="txt_dept">Abteilung</p>
             </div>
         </div>
-        <div id="result_raw">Resultat wird hier angezeigt</div>
-        <div class="hidden" id="script_show"></div>
         <footer>
             <div id="div_footer">
                 <p>M157 - MitarbeiterTelefonbuch</p>
@@ -58,7 +56,7 @@
                 body: `search=${search}`
             })
             .then((response) => response.text())
-            .then((res) => (document.getElementById("result_raw").innerHTML = res));
+            .then((res) => (document.getElementById("div_result").innerHTML = res));
     })
 
     function searchByID(id) {
@@ -73,7 +71,7 @@
                 body: `id=${id}`
             })
             .then((response) => response.text())
-            .then((res) => (document.getElementById("result_raw").innerHTML = res));
+            .then((res) => (document.getElementById("div_result").innerHTML = res));
     }
 </script>
 
