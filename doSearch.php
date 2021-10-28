@@ -34,7 +34,7 @@ if ($searchTerm != "") {
             echo "<h1 id='txt_name'>Keine Resultate</h1><br>";
     }
 } else {
-    echo 'alert("ERROR: Couldnt get the search term!");';
+    echo "<h1 id='txt_name'>ERROR: Problem mit Suchbegriff</h1><br>";
 };
 
 $conn->close();
