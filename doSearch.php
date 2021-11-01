@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 if ($searchTerm != "") {
     // set command & execute
-    $sql = "SELECT p.id, p.firstname, p.lastname, p.email, p.phone, d.departement, pos.position FROM people p INNER JOIN departement d ON p.fk_departement = d.id INNER JOIN position pos ON p.fk_position = pos.id WHERE p.firstname LIKE" . '"%' . $searchTerm . '%" OR p.lastname LIKE "%' . $searchTerm . '%" OR d.departement LIKE "%' . $searchTerm . '%" OR pos.position LIKE "%' . $searchTerm . '%" OR p.email LIKE "%' . $searchTerm . '%" OR p.phone LIKE "%' . $searchTerm . '%"';
+    $sql = "SELECT p.id, p.firstname, p.lastname, p.email, p.phone, d.departement, pos.position FROM people p INNER JOIN departement d ON p.fk_departement = d.id INNER JOIN position pos ON p.fk_position = pos.id WHERE p.firstname LIKE" . '"%' . $searchTerm . '%" OR p.lastname LIKE "%' . $searchTerm . '%" OR d.departement LIKE "%' . $searchTerm . '%" OR pos.position LIKE "%' . $searchTerm . '%" OR p.email LIKE "%' . $searchTerm . '%" OR p.phone LIKE "%' . $searchTerm . '%" ORDER BY p.id';
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
