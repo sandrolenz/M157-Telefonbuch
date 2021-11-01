@@ -41,13 +41,14 @@
 </body>
 
 <script type="text/javascript">
+    // save button as variable & add listener
     let btn = document.getElementById("btn_search")
     btn.addEventListener("click", function() {
         // get input
         var search = prompt("Suche")
         console.log("SearchTerm: " + search)
 
-        // call search function
+        // call search
         fetch("./doSearch.php", {
                 method: "POST",
                 headers: {
@@ -56,13 +57,14 @@
                 body: `search=${search}`
             })
             .then((response) => response.text())
+            // set content of #div_result to the php response
             .then((res) => (document.getElementById("div_result").innerHTML = res));
     })
 
     function searchByID(id) {
         var id = id
 
-        // call search function
+        // call search by id
         fetch("./searchByID.php", {
                 method: "POST",
                 headers: {
@@ -71,6 +73,7 @@
                 body: `id=${id}`
             })
             .then((response) => response.text())
+            // set content of #div_result to the php response
             .then((res) => (document.getElementById("div_result").innerHTML = res));
     }
 </script>

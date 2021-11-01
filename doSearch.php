@@ -14,6 +14,7 @@ if ($conn->connect_error) {
 }
 
 if ($searchTerm != "") {
+    // set command & execute
     $sql = "SELECT p.id, p.firstname, p.lastname, p.email, p.phone, d.departement, pos.position FROM people p INNER JOIN departement d ON p.fk_departement = d.id INNER JOIN position pos ON p.fk_position = pos.id WHERE p.firstname LIKE" . '"%' . $searchTerm . '%" OR p.lastname LIKE "%' . $searchTerm . '%" OR d.departement LIKE "%' . $searchTerm . '%" OR pos.position LIKE "%' . $searchTerm . '%" OR p.email LIKE "%' . $searchTerm . '%" OR p.phone LIKE "%' . $searchTerm . '%"';
     $result = $conn->query($sql);
 
@@ -34,7 +35,7 @@ if ($searchTerm != "") {
             echo "<h1 id='txt_name'>Keine Resultate</h1><br>";
     }
 } else {
-    echo "<h1 id='txt_name'>ERROR: Problem mit Suchbegriff</h1><br>";
+    echo "<h1 id='txt_name'>ERROR: Suchbegriff leer</h1><br>";
 };
 
 $conn->close();

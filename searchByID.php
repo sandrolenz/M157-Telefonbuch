@@ -14,6 +14,7 @@ if ($conn->connect_error) {
 }
 
 if ($searchTerm != "") {
+    // set command & execute
     $sql = "SELECT p.id, p.firstname, p.lastname, p.email, p.phone, d.departement, pos.position FROM people p INNER JOIN departement d ON p.fk_departement = d.id INNER JOIN position pos ON p.fk_position = pos.id WHERE p.id =" . $searchTerm;
     $result = $conn->query($sql);
 
@@ -29,7 +30,8 @@ if ($searchTerm != "") {
         echo 'Something went wrong';
     }
 } else {
-    echo "<h1 id='txt_name'>ERROR: Problem mit Suchbegriff</h1><br>";
+    // if this happens, run
+    echo "<h1 id='txt_name'>ERROR: Couldn't get the id</h1><br>";
 };
 
 $conn->close();
