@@ -20,12 +20,16 @@ if ($searchTerm != "") {
 
     if ($result->num_rows == 1) {
         while ($row = $result->fetch_assoc()) {
-                echo "<h1 id='txt_name'>" . $row["firstname"] . " " . $row["lastname"] . "</h1><br>";
-                echo "<br><a id='separator'>–––––––––/–––––––––</a><br>";
-                echo "<p id='txt_email'>" . $row["email"] . "</p>";
-                echo "<p id='txt_phone'>" . $row["phone"]. "</p>";
-                echo "<p id='txt_position'>" . $row["position"] . "</p>";
-                echo "<p id='txt_dept'>" . $row["departement"] . "</p>";}
+            echo "<h1 id='txt_name'>" . $row["firstname"] . " " . $row["lastname"] . "</h1><br>";
+            echo "<br><a id='separator'>–––––––––/–––––––––</a><br>";
+            echo "<p id='txt_email'><strong>E-Mail:</strong> " . $row["email"] . "</p>";
+            if ($row["phone"] == "") {
+                echo "<p id='txt_phone'><strong>Phone:</strong> n/a</p>";
+            } else {
+                echo "<p id='txt_phone'><strong>Phone:</strong> " . $row["phone"]. "</p>";
+            };
+            echo "<p id='txt_position'><strong>Position:</strong> " . $row["position"] . "</p>";
+            echo "<p id='txt_dept'><strong>Departement:</strong> " . $row["departement"] . "</p>";}
     } elseif ($result->num_rows > 1) {
         // output data of each row
         echo '<h1 class="result_list">Mehrere Resultate:</h1>';
