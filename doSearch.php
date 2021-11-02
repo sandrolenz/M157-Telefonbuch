@@ -36,7 +36,7 @@ if ($searchTerm != "") {
         while ($row = $result->fetch_assoc()) {
             echo '<p class="result_list"><button onclick="searchByID('. $row["id"] .')">' . $row["id"] . "</button> " . $row["firstname"] . " " . $row["lastname"] .", " . $row["position"] . ", " . $row["departement"] ."</p>"; }
         } else {
-            echo "<h1 id='txt_name'>Keine Resultate</h1><br>";
+            echo "<h1 id='txt_name'>Es wurde nichts gefunden</h1><br>";
     }
 } else {
     echo "<h1 id='txt_name'>ERROR: Suchbegriff leer</h1><br>";
