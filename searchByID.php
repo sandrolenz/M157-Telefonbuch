@@ -1,4 +1,5 @@
 <?php
+// get id
 $searchTerm = $_POST['id'];
 
 $servername = "localhost";
@@ -35,6 +36,7 @@ if ($searchTerm != "") {
     }
 } else {
     // if this happens, run
+    // -> should never be thrown, unless script is called directly and not via the buttons
     echo "<h1 id='txt_name'>ERROR: Couldn't get the id</h1><br>";
 };
 

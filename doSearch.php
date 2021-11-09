@@ -1,4 +1,5 @@
 <?php
+// get searchterm
 $searchTerm = $_POST['search'];
 
 $servername = "localhost";
